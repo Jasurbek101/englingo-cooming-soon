@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Englingo - Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -23,11 +20,18 @@
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            /* Google Fonts o'rniga system fallback fontlar */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background: linear-gradient(135deg, var(--deep-purple) 0%, var(--primary-purple) 100%);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* Righteous o'rniga cursive fallback */
+        .righteous-fallback {
+            font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 1px;
         }
 
         /* Animated Background Elements */
@@ -95,7 +99,7 @@
         }
 
         .logo-text {
-            font-family: 'Righteous', cursive;
+            font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
             color: var(--text-white);
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -206,7 +210,7 @@
             font-weight: 700;
             color: var(--primary-purple);
             line-height: 1;
-            font-family: 'Righteous', cursive;
+            font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
         }
 
         .countdown-label {
@@ -218,7 +222,7 @@
 
         /* Hero Section */
         .hero-title {
-            font-family: 'Righteous', cursive;
+            font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
             font-size: 4rem;
             color: var(--text-white);
             margin-bottom: 1.5rem;
@@ -267,7 +271,6 @@
             font-size: 1rem;
             background: rgba(255, 255, 255, 0.95);
             color: var(--primary-purple);
-            font-family: 'DM Sans', sans-serif;
             transition: all 0.3s ease;
         }
 
@@ -289,7 +292,6 @@
             border-radius: 12px;
             font-size: 1rem;
             font-weight: 700;
-            font-family: 'DM Sans', sans-serif;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 16px rgba(255, 224, 61, 0.4);
@@ -317,65 +319,12 @@
                 width: 100%;
             }
 
-            .feature-icon {
-                gap: 0.3rem;
-            }
-
-            .icon-wrapper {
-                width: 45px;
-                height: 45px;
-            }
-
-            .icon-svg {
-                width: 25px;
-                height: 25px;
-            }
-
-            .icon-label {
-                font-size: 0.65rem;
-            }
-
-            .main-content {
-                padding: 1rem;
-            }
-
-            .countdown-container {
-                gap: 0.5rem;
-            }
-
-            .countdown-box {
-                padding: 1rem 1rem;
-                min-width: 70px;
-            }
-
-            .countdown-number {
-                font-size: 2rem;
-            }
-
-            .countdown-label {
-                font-size: 0.7rem;
-            }
-
             .hero-title {
                 font-size: 2.5rem;
             }
 
-            .hero-description {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
-
-            .email-form {
-                flex-direction: column;
-                padding: 0 1rem;
-            }
-
-            .email-input {
-                min-width: 100%;
-            }
-
-            .notify-button {
-                width: 100%;
+            .countdown-number {
+                font-size: 2rem;
             }
 
             .bg-circle-1 {
@@ -392,15 +341,6 @@
         @media (max-width: 480px) {
             .hero-title {
                 font-size: 2rem;
-            }
-
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-
-            .countdown-box {
-                padding: 0.8rem 0.8rem;
-                min-width: 65px;
             }
 
             .logo-icon {
@@ -437,154 +377,147 @@
     </style>
 </head>
 <body>
-    <!-- Background Decorations -->
-    <div class="bg-decoration bg-circle-1"></div>
-    <div class="bg-decoration bg-circle-2"></div>
+<!-- Background Decorations -->
+<div class="bg-decoration bg-circle-1"></div>
+<div class="bg-decoration bg-circle-2"></div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-container">
-            <div class="logo-icon">📚</div>
-            <span class="logo-text">Englingo</span>
+<!-- Header -->
+<header class="header">
+    <div class="logo-container">
+        <div class="logo-icon">📚</div>
+        <span class="logo-text">Englingo</span>
+    </div>
+
+    <div class="feature-icons">
+        <div class="feature-icon">
+            <div class="icon-wrapper">
+                <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+            </div>
+            <span class="icon-label">Reading</span>
         </div>
 
-        <div class="feature-icons">
-            <div class="feature-icon">
-                <div class="icon-wrapper">
-                    <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                </div>
-                <span class="icon-label">Reading</span>
+        <div class="feature-icon">
+            <div class="icon-wrapper">
+                <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                </svg>
             </div>
-
-            <div class="feature-icon">
-                <div class="icon-wrapper">
-                    <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-                    </svg>
-                </div>
-                <span class="icon-label">Listening</span>
-            </div>
-
-            <div class="feature-icon">
-                <div class="icon-wrapper">
-                    <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                    </svg>
-                </div>
-                <span class="icon-label">Speaking</span>
-            </div>
-
-            <div class="feature-icon">
-                <div class="icon-wrapper">
-                    <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                    </svg>
-                </div>
-                <span class="icon-label">Writing</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Countdown Timer -->
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <div class="countdown-number" id="days">27</div>
-                <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="hours">18</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="minutes">45</div>
-                <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="seconds">07</div>
-                <div class="countdown-label">Seconds</div>
-            </div>
+            <span class="icon-label">Listening</span>
         </div>
 
-        <!-- Hero Section -->
-        <h1 class="hero-title">We are coming soon</h1>
-        <p class="hero-description">
-            We are almost there! If you want to get notified when the website goes live subscribe to our mailing list!
-        </p>
+        <div class="feature-icon">
+            <div class="icon-wrapper">
+                <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+            </div>
+            <span class="icon-label">Speaking</span>
+        </div>
 
-        <!-- Email Form -->
-        <form class="email-form" id="emailForm">
-            <input 
-                type="email" 
-                class="email-input" 
-                placeholder="Email Address" 
+        <div class="feature-icon">
+            <div class="icon-wrapper">
+                <svg class="icon-svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+            </div>
+            <span class="icon-label">Writing</span>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <div class="countdown-box">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-box">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-box">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-box">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <h1 class="hero-title">We are coming soon</h1>
+    <p class="hero-description">
+        We are almost there! If you want to get notified when the website goes live subscribe to our mailing list!
+    </p>
+
+    <!-- Email Form -->
+    <form class="email-form" id="emailForm">
+        <input
+                type="email"
+                class="email-input"
+                placeholder="Email Address"
                 required
                 id="emailInput"
-            >
-            <button type="submit" class="notify-button">Notify me!</button>
-        </form>
+        >
+        <button type="submit" class="notify-button">Notify me!</button>
+    </form>
 
-        <div class="success-message" id="successMessage">
-            ✓ Thank you! We'll notify you when we launch.
-        </div>
-    </main>
+    <div class="success-message" id="successMessage">
+        ✓ Thank you! We'll notify you when we launch.
+    </div>
+</main>
 
-    <script>
-        // Countdown Timer
-        function updateCountdown() {
-            // Set target date (22 days, 18 hours, 45 minutes, 7 seconds from now)
-            const now = new Date().getTime();
-            const targetDate = now + (22 * 24 * 60 * 60 * 1000) + (18 * 60 * 60 * 1000) + (45 * 60 * 1000) + (7 * 1000);
+<script>
+    // Countdown Timer - Taxminan 22 kun keyin tugaydi (2026-yanvar atrofida)
+    function updateCountdown() {
+        const now = new Date().getTime();
+        // Hozirgi vaqtdan ~22 kun + 18 soat + 45 daqiqa + 7 soniya qo'shish
+        const targetDate = now + (22 * 24 * 60 * 60 * 1000) + (18 * 60 * 60 * 1000) + (45 * 60 * 1000) + (7 * 1000);
 
-            const timer = setInterval(function() {
-                const currentTime = new Date().getTime();
-                const distance = targetDate - currentTime;
+        const timer = setInterval(function() {
+            const currentTime = new Date().getTime();
+            let distance = targetDate - currentTime;
 
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) {
+                distance = 0;
+                clearInterval(timer);
+            }
 
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                if (distance < 0) {
-                    clearInterval(timer);
-                    document.getElementById('days').textContent = '00';
-                    document.getElementById('hours').textContent = '00';
-                    document.getElementById('minutes').textContent = '00';
-                    document.getElementById('seconds').textContent = '00';
-                }
-            }, 1000);
-        }
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }, 1000);
+    }
 
-        updateCountdown();
+    updateCountdown();
 
-        // Email Form Submission
-        document.getElementById('emailForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            
-            // Here you would typically send the email to your backend
-            console.log('Email submitted:', email);
-            
-            // Show success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.classList.add('show');
-            
-            // Clear input
-            document.getElementById('emailInput').value = '';
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-        });
-    </script>
+    // Email Form Submission (faqat lokal demo)
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+
+        console.log('Email submitted:', email);
+
+        const successMessage = document.getElementById('successMessage');
+        successMessage.classList.add('show');
+
+        document.getElementById('emailInput').value = '';
+
+        setTimeout(() => {
+            successMessage.classList.remove('show');
+        }, 5000);
+    });
+</script>
 </body>
 </html>
